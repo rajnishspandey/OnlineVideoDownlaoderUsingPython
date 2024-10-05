@@ -2,14 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Downloader</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        label {
+            font-size: 16px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 15px;
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Video Downloader</h1>
-    <form action="/download" method="post">
-        <label for="video_url">Enter video URL:</label>
-        <input type="text" id="video_url" name="video_url">
-        <input type="submit" value="Download">
-    </form>
+    <div class="container">
+        <h1>Video Downloader</h1>
+        <form action="/download" method="post">
+            <label for="video_url">Enter video URL:</label>
+            <input type="text" id="video_url" name="video_url" placeholder="e.g. https://youtu.be/example" required>
+            <input type="submit" value="Download">
+        </form>
+    </div>
 </body>
 </html>
